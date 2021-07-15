@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mouth {
+  width: 150px;
+  height: 75px;
+  background-color: green;
+  border-radius: 75px 75px 0 0;
+  position: relative;
+  animation: mouth-animation 5s linear 8s forwards;
+  opacity: 0;
+}
+.eye {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+}
+.eye1 {
+  left: 30px;
+  top: 30px;
+}
+.eye2 {
+  right: 30px;
+  top: 30px;
+}
+.mouth::before,
+.mouth::after {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 5px;
+  background-color: green;
+}
+.mouth::before {
+  right: 10px;
+  top: 7px;
+  transform-origin: left;
+  transform: rotate(-70deg);
+  animation: right-bar-animation 1s infinite alternate;
+}
+.mouth::after {
+  left: 10px;
+  top: 7px;
+  transform-origin: right;
+  transform: rotate(70deg);
+  animation: left-bar-animation 1s infinite alternate;
+}
+.body {
+  width: 150px;
+  height: 150px;
+  background: green;
+  margin-top: 5px;
+  border-radius: 0 0 30px 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: body-animation 3s ease;
+}
+h2 {
+  font-size: 2em;
+  color: #fff;
+  animation: text-animation 2s ease 13s forwards;
+  opacity: 0;
+}
+.hand {
+  width: 30px;
+  height: 130px;
+  background: green;
+  border-radius: 20px;
+  position: absolute;
+  opacity: 0;
+}
+.hand1 {
+  top: calc(50% - 65px);
+  left: -35px;
+  animation: left-hand-animation 3s ease 3s forwards;
+}
+.hand2 {
+  top: calc(50% - 65px);
+  right: -35px;
+  animation: right-hand-animation 3s ease 3s forwards;
+}
+.body::before,
+.body::after {
+  position: absolute;
+  content: "";
+  width: 35px;
+  height: 90px;
+  background-color: green;
+  border-radius: 0 0 20px 20px;
+  animation: leg-animation 3s ease 6s forwards;
+  z-index: -1;
+  opacity: 0;
+}
+.body::before {
+  bottom: -95px;
+  left: 30px;
+}
+.body::after {
+  bottom: -95px;
+  right: 30px;
+}
+@keyframes mouth-animation {
+  0% {
+    top: -450px;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+@keyframes right-bar-animation {
+  0% {
+    transform: rotate(-60deg);
+  }
+  100% {
+    transform: rotate(-80deg);
+  }
+}
+@keyframes left-bar-animation {
+  0% {
+    transform: rotate(60deg);
+  }
+  100% {
+    transform: rotate(80deg);
+  }
+}
+@keyframes right-hand-animation {
+  0% {
+    right: -43vw;
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    right: -35px;
+    opacity: 1;
+  }
+}
+@keyframes left-hand-animation {
+  0% {
+    left: -50vw;
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    left: -35px;
+    opacity: 1;
+  }
+}
+@keyframes leg-animation {
+  0% {
+    bottom: 0vh;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  80% {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  100% {
+    bottom: -95px;
+    opacity: 1;
+  }
+}
+@keyframes text-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes body-animation {
+  0% {
+    height: 0;
+    width: 0;
+    border-radius: 50%;
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+  }
+}
